@@ -1,0 +1,295 @@
+2024-06-28 18:51:20.843 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 1.8.0_402 on DESKTOP-QDUUQ29 with PID 15832 (D:\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by 黄旭 in D:\MyProject\yang-finance-service)
+2024-06-28 18:51:20.845 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-06-28 18:51:20.846 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-06-28 18:51:23.246 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-28 18:51:23.246 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-06-28 18:51:23.421 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-28 18:51:24.257 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-06-28 18:51:24.328 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-06-28 18:51:24.560 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$804ac5d9 - Filter 'authFilterConfig' configured for use
+2024-06-28 18:51:25.737 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-06-28 18:51:26.219 [redisson-netty-4-13] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-06-28 18:51:26.219 [redisson-netty-4-19] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-06-28 18:51:26.814 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-06-28 18:51:27.715 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-06-28 18:51:27.958 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-06-28 18:51:29.899 [main] ERROR o.a.r.s.a.ListenerContainerConfiguration - Started container failed. DefaultRocketMQListenerContainer{consumerGroup='consumer-group-1', namespace='', nameServer='127.0.0.1:9876', topic='Voucher', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false, instanceName=DEFAULT}
+java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:671)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:500)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:1206)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:969)
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:737)
+	at org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer.start(DefaultRocketMQListenerContainer.java:343)
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:106)
+	at org.apache.rocketmq.spring.annotation.RocketMQMessageListenerBeanPostProcessor.postProcessAfterInitialization(RocketMQMessageListenerBeanPostProcessor.java:55)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:473)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1785)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1776)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:610)
+	... 25 common frames omitted
+2024-06-28 18:51:29.901 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'saveVoucherConsumer' defined in file [D:\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\mq\SaveVoucherConsumer.class]: Initialization of bean failed; nested exception is java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+2024-06-28 18:51:29.904 [main] INFO  o.a.r.s.s.DefaultRocketMQListenerContainer - container destroyed, DefaultRocketMQListenerContainer{consumerGroup='consumer-group-1', namespace='', nameServer='127.0.0.1:9876', topic='Voucher', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false, instanceName=DEFAULT}
+2024-06-28 18:51:29.935 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-28 18:51:29.938 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Thread-10] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:144)
+2024-06-28 18:51:29.975 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'saveVoucherConsumer' defined in file [D:\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\mq\SaveVoucherConsumer.class]: Initialization of bean failed; nested exception is java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:109)
+	at org.apache.rocketmq.spring.annotation.RocketMQMessageListenerBeanPostProcessor.postProcessAfterInitialization(RocketMQMessageListenerBeanPostProcessor.java:55)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 15 common frames omitted
+Caused by: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:671)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:500)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:1206)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:969)
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:737)
+	at org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer.start(DefaultRocketMQListenerContainer.java:343)
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:106)
+	... 19 common frames omitted
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:473)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1785)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1776)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:610)
+	... 25 common frames omitted
+2024-06-28 18:52:35.797 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 1.8.0_402 on DESKTOP-QDUUQ29 with PID 17308 (D:\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by 黄旭 in D:\MyProject\yang-finance-service)
+2024-06-28 18:52:35.799 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-06-28 18:52:35.800 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-06-28 18:52:37.786 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-28 18:52:37.786 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-06-28 18:52:37.917 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-28 18:52:38.728 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-06-28 18:52:38.789 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-06-28 18:52:39.000 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$3b634c35 - Filter 'authFilterConfig' configured for use
+2024-06-28 18:52:40.250 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-06-28 18:52:40.732 [redisson-netty-4-15] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-06-28 18:52:40.732 [redisson-netty-4-16] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-06-28 18:52:41.294 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-06-28 18:52:42.252 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-06-28 18:52:42.407 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-06-28 18:52:44.443 [main] ERROR o.a.r.s.a.ListenerContainerConfiguration - Started container failed. DefaultRocketMQListenerContainer{consumerGroup='consumer-group-1', namespace='', nameServer='127.0.0.1:9876', topic='Voucher', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false, instanceName=DEFAULT}
+java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:671)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:500)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:1206)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:969)
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:737)
+	at org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer.start(DefaultRocketMQListenerContainer.java:343)
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:106)
+	at org.apache.rocketmq.spring.annotation.RocketMQMessageListenerBeanPostProcessor.postProcessAfterInitialization(RocketMQMessageListenerBeanPostProcessor.java:55)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:473)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1785)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1776)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:610)
+	... 25 common frames omitted
+2024-06-28 18:52:44.446 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'saveVoucherConsumer' defined in file [D:\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\mq\SaveVoucherConsumer.class]: Initialization of bean failed; nested exception is java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+2024-06-28 18:52:44.450 [main] INFO  o.a.r.s.s.DefaultRocketMQListenerContainer - container destroyed, DefaultRocketMQListenerContainer{consumerGroup='consumer-group-1', namespace='', nameServer='127.0.0.1:9876', topic='Voucher', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false, instanceName=DEFAULT}
+2024-06-28 18:52:44.481 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-28 18:52:44.484 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Thread-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:144)
+2024-06-28 18:52:44.516 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'saveVoucherConsumer' defined in file [D:\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\mq\SaveVoucherConsumer.class]: Initialization of bean failed; nested exception is java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:109)
+	at org.apache.rocketmq.spring.annotation.RocketMQMessageListenerBeanPostProcessor.postProcessAfterInitialization(RocketMQMessageListenerBeanPostProcessor.java:55)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 15 common frames omitted
+Caused by: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:671)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:500)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:1206)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:969)
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:737)
+	at org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer.start(DefaultRocketMQListenerContainer.java:343)
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:106)
+	... 19 common frames omitted
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:473)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1785)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1776)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:610)
+	... 25 common frames omitted
+2024-06-28 18:54:08.373 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 1.8.0_402 on DESKTOP-QDUUQ29 with PID 16420 (D:\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by 黄旭 in D:\MyProject\yang-finance-service)
+2024-06-28 18:54:08.375 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-06-28 18:54:08.375 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-06-28 18:54:11.647 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-06-28 18:54:11.719 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-06-28 18:54:11.949 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$a504a9fb - Filter 'authFilterConfig' configured for use
+2024-06-28 18:54:13.164 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-06-28 18:54:13.639 [redisson-netty-4-23] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-06-28 18:54:13.639 [redisson-netty-4-16] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-06-28 18:54:14.209 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-06-28 18:54:18.372 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 1.8.0_402 on DESKTOP-QDUUQ29 with PID 17284 (D:\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by 黄旭 in D:\MyProject\yang-finance-service)
+2024-06-28 18:54:18.374 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-06-28 18:54:18.374 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-06-28 18:54:20.461 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-28 18:54:20.461 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-06-28 18:54:20.594 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-28 18:54:21.402 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-06-28 18:54:21.472 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-06-28 18:54:21.697 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$a504a9fb - Filter 'authFilterConfig' configured for use
+2024-06-28 18:54:23.480 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-06-28 18:54:24.083 [redisson-netty-4-20] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-06-28 18:54:24.083 [redisson-netty-4-23] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-06-28 18:54:24.677 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-06-28 18:54:25.603 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-06-28 18:54:25.944 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-06-28 18:54:27.893 [main] ERROR o.a.r.s.a.ListenerContainerConfiguration - Started container failed. DefaultRocketMQListenerContainer{consumerGroup='consumer-group-1', namespace='', nameServer='127.0.0.1:9876', topic='Voucher', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false, instanceName=DEFAULT}
+java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:671)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:500)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:1206)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:969)
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:737)
+	at org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer.start(DefaultRocketMQListenerContainer.java:343)
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:106)
+	at org.apache.rocketmq.spring.annotation.RocketMQMessageListenerBeanPostProcessor.postProcessAfterInitialization(RocketMQMessageListenerBeanPostProcessor.java:55)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:473)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1785)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1776)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:610)
+	... 25 common frames omitted
+2024-06-28 18:54:27.898 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'saveVoucherConsumer' defined in file [D:\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\mq\SaveVoucherConsumer.class]: Initialization of bean failed; nested exception is java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+2024-06-28 18:54:27.901 [main] INFO  o.a.r.s.s.DefaultRocketMQListenerContainer - container destroyed, DefaultRocketMQListenerContainer{consumerGroup='consumer-group-1', namespace='', nameServer='127.0.0.1:9876', topic='Voucher', consumeMode=CONCURRENTLY, selectorType=TAG, selectorExpression='*', messageModel=CLUSTERING', tlsEnable=false, instanceName=DEFAULT}
+2024-06-28 18:54:27.945 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-06-28 18:54:27.949 [main] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [Thread-11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.net.dns.ResolverConfigurationImpl.notifyAddrChange0(Native Method)
+ sun.net.dns.ResolverConfigurationImpl$AddressChangeListener.run(ResolverConfigurationImpl.java:144)
+2024-06-28 18:54:28.002 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'saveVoucherConsumer' defined in file [D:\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\mq\SaveVoucherConsumer.class]: Initialization of bean failed; nested exception is java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: java.lang.RuntimeException: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:109)
+	at org.apache.rocketmq.spring.annotation.RocketMQMessageListenerBeanPostProcessor.postProcessAfterInitialization(RocketMQMessageListenerBeanPostProcessor.java:55)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 15 common frames omitted
+Caused by: java.lang.IllegalStateException: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:671)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:500)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.updateTopicSubscribeInfoWhenSubscriptionChanged(DefaultMQPushConsumerImpl.java:1206)
+	at org.apache.rocketmq.client.impl.consumer.DefaultMQPushConsumerImpl.start(DefaultMQPushConsumerImpl.java:969)
+	at org.apache.rocketmq.client.consumer.DefaultMQPushConsumer.start(DefaultMQPushConsumer.java:737)
+	at org.apache.rocketmq.spring.support.DefaultRocketMQListenerContainer.start(DefaultRocketMQListenerContainer.java:343)
+	at org.apache.rocketmq.spring.autoconfigure.ListenerContainerConfiguration.registerContainer(ListenerContainerConfiguration.java:106)
+	... 19 common frames omitted
+Caused by: org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to null failed
+	at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:473)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1785)
+	at org.apache.rocketmq.client.impl.MQClientAPIImpl.getTopicRouteInfoFromNameServer(MQClientAPIImpl.java:1776)
+	at org.apache.rocketmq.client.impl.factory.MQClientInstance.updateTopicRouteInfoFromNameServer(MQClientInstance.java:610)
+	... 25 common frames omitted

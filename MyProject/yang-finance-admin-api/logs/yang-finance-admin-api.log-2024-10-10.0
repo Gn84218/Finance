@@ -1,0 +1,1356 @@
+2024-10-10 12:28:14.629 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 2896 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 12:28:14.630 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 12:28:14.631 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 12:28:17.759 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 12:28:17.759 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 12:28:17.830 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 12:28:18.029 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 12:28:18.075 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 12:28:18.231 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$357fec5b - Filter 'authFilterConfig' configured for use
+2024-10-10 12:28:19.185 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 12:28:19.285 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'regController' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes\com\yang\finance\admin\api\controller\RegController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberRegServiceImpl' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\service\impl\MemberRegServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+2024-10-10 12:28:19.292 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-10 12:28:19.313 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'regController' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes\com\yang\finance\admin\api\controller\RegController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberRegServiceImpl' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\service\impl\MemberRegServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberRegServiceImpl' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\service\impl\MemberRegServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 47 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:159)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.connection.pool.ConnectionPool.promiseFailure(ConnectionPool.java:329)
+	at org.redisson.connection.pool.ConnectionPool.lambda$createConnection$1(ConnectionPool.java:295)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.client.RedisClient$2$2.run(RedisClient.java:248)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: getsockopt: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:32:06.528 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 6324 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 12:32:06.530 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 12:32:06.530 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 12:32:07.962 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 12:32:07.962 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 12:32:08.034 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 12:32:08.219 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 12:32:08.258 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 12:32:08.400 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$5424349b - Filter 'authFilterConfig' configured for use
+2024-10-10 12:32:09.124 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 12:32:09.244 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'regController' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes\com\yang\finance\admin\api\controller\RegController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberRegServiceImpl' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\service\impl\MemberRegServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+2024-10-10 12:32:09.254 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-10 12:32:09.276 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'regController' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes\com\yang\finance\admin\api\controller\RegController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberRegServiceImpl' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\service\impl\MemberRegServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.yang.FinanceAdminApiApplication.main(FinanceAdminApiApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'memberRegServiceImpl' defined in file [C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-biz\target\classes\com\yang\finance\biz\service\impl\MemberRegServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonSingle' defined in class path resource [com/yang/common/config/RedissonAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonSingle' threw exception; nested exception is org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 47 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Unable to connect to Redis server: /127.0.0.1:6379
+	at org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:159)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:552)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.connection.pool.ConnectionPool.promiseFailure(ConnectionPool.java:329)
+	at org.redisson.connection.pool.ConnectionPool.lambda$createConnection$1(ConnectionPool.java:295)
+	at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:183)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:578)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:571)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:550)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:491)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:616)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:609)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117)
+	at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:96)
+	at org.redisson.client.RedisClient$3$2.run(RedisClient.java:307)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: getsockopt: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:39:45.129 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 33324 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 12:39:45.129 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 12:39:45.129 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 12:39:46.726 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 12:39:46.726 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 12:39:46.804 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 12:39:47.003 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 12:39:47.048 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 12:39:47.204 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$7f3372c3 - Filter 'authFilterConfig' configured for use
+2024-10-10 12:39:47.930 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 12:39:48.068 [redisson-netty-4-22] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-10-10 12:39:48.068 [redisson-netty-4-23] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-10-10 12:39:48.175 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-10-10 12:39:48.232 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-10-10 12:39:48.233 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:39:48.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:39:48.397 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-10-10 12:39:48.454 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init start ...
+2024-10-10 12:39:48.517 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init end
+2024-10-10 12:39:48.690 [main] INFO  c.yang.common.config.Swagger3Config - swaggerProperties: SwaggerProperties(enable=true, name=YANG-FINANCE-ADMIN-API, version=0.0.1, description=YANG-FINANCE-ADMIN-API 接口文档, pathMapping=null)
+2024-10-10 12:39:48.715 [main] INFO  com.yang.common.config.XxlJobConfig - >>>>>>>>>>> xxl-job config init.
+2024-10-10 12:39:48.936 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:handleMqMessage, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@4c541b00[class com.yang.finance.biz.job.MqMsgJobService#handleMqMessage]
+2024-10-10 12:39:48.937 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleResourceCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@1f26bd62[class com.yang.finance.biz.job.SysJobService#setSysRoleResourceCacheJobHandler]
+2024-10-10 12:39:48.937 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleMenuCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@61f18997[class com.yang.finance.biz.job.SysJobService#setSysRoleMenuCacheJobHandler]
+2024-10-10 12:39:49.019 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2024-10-10 12:39:49.030 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:39:49.030 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:39:49.645 [main] INFO  com.yang.FinanceAdminApiApplication - Started FinanceAdminApiApplication in 4.875 seconds (JVM running for 5.932)
+2024-10-10 12:39:51.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:39:54.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:39:57.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:00.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:03.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:06.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:09.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:12.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:15.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:18.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:18.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:19.042 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:40:19.042 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:40:21.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:24.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:27.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:30.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:33.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:36.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:39.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:42.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:45.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:48.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:48.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:49.055 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:40:49.055 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:40:51.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:54.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:40:57.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:00.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:03.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:06.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:09.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:12.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:15.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:18.228 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:18.238 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:19.066 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:41:19.066 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:41:21.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:24.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:27.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:30.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:33.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:36.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:39.233 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:42.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:45.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:48.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:49.067 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:41:49.067 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:41:51.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:54.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:41:57.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:00.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:03.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:06.232 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:09.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:12.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:15.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:18.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:18.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:19.070 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:42:19.070 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:42:21.263 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:24.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:27.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:30.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:33.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:36.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:39.238 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:42.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:45.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:48.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:48.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:49.078 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:42:49.078 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:42:51.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:54.233 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:42:57.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:00.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:03.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:06.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:09.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:12.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:15.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:18.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:18.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:19.094 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:43:19.094 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:43:21.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:24.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:27.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:30.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:33.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:36.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:39.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:42.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:45.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:48.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:48.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:49.095 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:43:49.095 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:43:51.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:54.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:43:57.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:00.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:03.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:06.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:09.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:12.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:15.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:18.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:18.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:19.105 [xxl-job, executor ExecutorRegistryThread] ERROR c.x.job.core.util.XxlJobRemotingUtil - Connection refused: getsockopt
+java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:99)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-10 12:44:19.105 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=500, msg=xxl-job remoting error(Connection refused: getsockopt), for url : http://localhost:8080/xxl-job-admin/api/registry, content=null]
+2024-10-10 12:44:21.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:24.228 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:27.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:30.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:33.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:36.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:39.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:42.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:45.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:48.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:51.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:54.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:44:57.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:00.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:03.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:06.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:09.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:12.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:15.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:18.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:18.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:21.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:24.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:27.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:30.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:33.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:36.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:39.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:42.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:45.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:48.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:48.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:51.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:54.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:45:57.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:00.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:03.232 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:06.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:09.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:12.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:15.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:18.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:21.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:24.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:27.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:30.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:33.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:36.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:39.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:42.228 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:45.233 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:48.233 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:48.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:51.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:54.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:46:57.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:00.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:03.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:06.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:09.238 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:12.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:15.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:18.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:18.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:21.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:24.238 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:27.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:30.236 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:33.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:36.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:39.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:42.232 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:45.238 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:48.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:48.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:51.226 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:54.232 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:47:57.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:00.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:03.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:06.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:09.229 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:12.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:15.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:18.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:18.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:21.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:24.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:27.230 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:30.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:33.235 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:36.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:39.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:42.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:45.225 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:48.224 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:48.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:51.233 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:54.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:48:57.227 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:00.238 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:03.234 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:06.232 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:09.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:12.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:15.231 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:18.237 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:19.351 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server stop.
+2024-10-10 12:49:19.354 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2024-10-10 12:49:19.355 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job, executor registry thread destroy.
+2024-10-10 12:49:19.355 [SpringApplicationShutdownHook] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server destroy success.
+2024-10-10 12:49:19.355 [xxl-job, executor JobLogFileCleanThread] INFO  c.x.j.c.thread.JobLogFileCleanThread - >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destroy.
+2024-10-10 12:49:19.355 [xxl-job, executor TriggerCallbackThread] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor callback thread destroy.
+2024-10-10 12:49:19.355 [Thread-7] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor retry callback thread destroy.
+2024-10-10 12:49:25.273 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 39448 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 12:49:25.274 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 12:49:25.274 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 12:49:26.728 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 12:49:26.728 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 12:49:26.800 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 12:49:26.989 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 12:49:27.032 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 12:49:27.170 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$5424349b - Filter 'authFilterConfig' configured for use
+2024-10-10 12:49:27.941 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 12:49:28.071 [redisson-netty-4-16] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-10-10 12:49:28.071 [redisson-netty-4-23] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-10-10 12:49:28.187 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-10-10 12:49:28.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:28.247 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-10-10 12:49:28.262 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:28.373 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-10-10 12:49:28.432 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init start ...
+2024-10-10 12:49:28.493 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init end
+2024-10-10 12:49:28.683 [main] INFO  c.yang.common.config.Swagger3Config - swaggerProperties: SwaggerProperties(enable=true, name=YANG-FINANCE-ADMIN-API, version=0.0.1, description=YANG-FINANCE-ADMIN-API 接口文档, pathMapping=null)
+2024-10-10 12:49:28.707 [main] INFO  com.yang.common.config.XxlJobConfig - >>>>>>>>>>> xxl-job config init.
+2024-10-10 12:49:28.926 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:handleMqMessage, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@70f37190[class com.yang.finance.biz.job.MqMsgJobService#handleMqMessage]
+2024-10-10 12:49:28.926 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleResourceCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@1d642682[class com.yang.finance.biz.job.SysJobService#setSysRoleResourceCacheJobHandler]
+2024-10-10 12:49:28.926 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleMenuCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6afdb486[class com.yang.finance.biz.job.SysJobService#setSysRoleMenuCacheJobHandler]
+2024-10-10 12:49:29.006 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2024-10-10 12:49:29.661 [main] INFO  com.yang.FinanceAdminApiApplication - Started FinanceAdminApiApplication in 4.729 seconds (JVM running for 5.148)
+2024-10-10 12:49:31.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:34.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:37.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:40.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:43.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:46.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:49.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:55.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:58.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:49:58.262 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:01.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:04.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:07.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:10.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:13.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:16.266 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:19.269 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:22.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:25.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:28.266 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:31.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:34.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:37.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:40.255 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:43.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:46.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:49.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:52.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:55.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:50:58.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:01.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:04.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:07.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:10.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:13.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:16.255 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:19.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:22.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:25.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:28.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:28.255 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:31.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:34.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:37.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:40.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:43.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:46.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:49.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:55.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:51:58.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:01.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:04.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:07.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:10.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:13.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:16.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:19.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:22.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:25.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:28.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:31.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:34.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:37.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:40.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:43.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:46.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:49.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:52.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:55.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:52:58.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:01.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:04.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:07.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:10.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:13.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:16.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:19.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:22.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:25.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:28.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:31.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:34.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:37.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:40.261 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:43.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:46.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:49.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:52.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:55.256 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:58.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:53:58.264 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:01.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:04.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:07.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:10.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:13.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:16.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:19.255 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:22.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:25.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:28.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:28.262 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:31.255 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:34.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:37.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:40.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:43.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:46.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:49.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:52.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:55.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:58.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:54:58.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:01.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:04.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:07.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:10.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:13.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:16.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:19.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:22.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:25.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:28.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:31.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:34.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:37.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:40.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:43.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:46.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:49.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:52.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:55.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:58.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:55:58.264 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:01.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:04.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:07.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:10.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:13.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:16.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:19.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:22.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:28.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:31.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:34.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:37.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:40.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:46.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:49.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:55.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:58.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:56:58.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:01.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:04.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:07.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:10.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:13.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:16.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:19.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:22.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:25.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:28.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:28.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:31.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:34.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:37.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:40.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:46.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:49.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:55.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:58.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:57:58.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:01.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:04.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:07.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:10.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:13.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:16.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:19.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:22.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:28.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:31.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:34.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:37.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:40.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:43.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:46.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:49.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:52.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:55.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:58.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:58:58.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:01.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:04.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:07.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:10.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:13.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:16.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:19.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:22.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:28.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:28.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:31.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:34.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:37.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:40.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:46.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:49.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:52.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:55.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 12:59:58.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:01.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:04.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:07.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:10.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:13.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:16.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:19.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:22.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:28.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:28.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:31.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:34.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:37.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:40.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:46.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:49.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:55.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:58.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:00:58.261 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:01.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:04.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:07.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:10.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:13.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:16.262 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:19.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:22.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:28.256 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:31.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:34.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:37.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:40.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:43.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:46.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:49.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:55.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:58.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:01:58.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:01.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:04.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:07.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:10.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:13.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:16.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:19.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:22.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:28.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:31.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:34.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:37.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:40.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:46.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:49.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:52.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:55.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:58.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:02:58.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:01.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:04.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:07.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:10.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:13.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:16.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:19.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:22.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:28.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:31.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:34.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:37.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:40.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:43.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:46.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:49.244 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:52.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:55.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:58.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:03:58.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:01.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:04.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:07.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:10.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:13.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:16.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:19.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:22.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:28.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:31.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:34.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:37.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:40.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:46.242 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:49.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:52.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:55.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:58.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:04:58.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:01.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:04.243 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:07.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:10.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:13.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:16.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:19.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:22.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:25.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:28.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:31.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:34.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:37.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:40.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:43.254 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:46.253 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:49.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:52.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:55.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:58.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:05:58.256 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:01.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:04.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:07.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:10.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:13.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:16.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:19.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:22.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:25.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:28.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:28.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:31.247 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:34.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:37.248 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:40.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:43.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:46.246 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:49.249 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:52.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:55.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:58.241 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:06:58.251 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:01.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:04.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:07.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:10.252 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:13.255 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:16.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:19.245 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:22.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:25.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:28.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:28.250 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:31.239 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:34.240 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:34.827 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server stop.
+2024-10-10 13:07:34.829 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2024-10-10 13:07:34.829 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job, executor registry thread destroy.
+2024-10-10 13:07:34.830 [SpringApplicationShutdownHook] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server destroy success.
+2024-10-10 13:07:34.830 [xxl-job, executor JobLogFileCleanThread] INFO  c.x.j.c.thread.JobLogFileCleanThread - >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destroy.
+2024-10-10 13:07:34.830 [xxl-job, executor TriggerCallbackThread] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor callback thread destroy.
+2024-10-10 13:07:34.830 [Thread-7] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor retry callback thread destroy.
+2024-10-10 13:07:43.084 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 3488 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 13:07:43.085 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 13:07:43.085 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 13:07:45.515 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 13:07:45.515 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 13:07:45.604 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 13:07:45.836 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 41760 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 13:07:45.838 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 13:07:45.838 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 13:07:45.846 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 13:07:45.909 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 13:07:46.107 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$5424349b - Filter 'authFilterConfig' configured for use
+2024-10-10 13:07:47.138 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 13:07:47.268 [redisson-netty-4-23] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-10-10 13:07:47.268 [redisson-netty-4-19] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-10-10 13:07:47.370 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-10-10 13:07:47.434 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:47.434 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-10-10 13:07:47.451 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:47.489 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 13:07:47.489 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 13:07:47.574 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-10-10 13:07:47.577 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 13:07:47.643 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init start ...
+2024-10-10 13:07:47.714 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init end
+2024-10-10 13:07:47.803 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 13:07:47.848 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 13:07:47.906 [main] INFO  c.yang.common.config.Swagger3Config - swaggerProperties: SwaggerProperties(enable=true, name=YANG-FINANCE-ADMIN-API, version=0.0.1, description=YANG-FINANCE-ADMIN-API 接口文档, pathMapping=null)
+2024-10-10 13:07:47.932 [main] INFO  com.yang.common.config.XxlJobConfig - >>>>>>>>>>> xxl-job config init.
+2024-10-10 13:07:48.009 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$5424349b - Filter 'authFilterConfig' configured for use
+2024-10-10 13:07:48.170 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:handleMqMessage, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@4cce889e[class com.yang.finance.biz.job.MqMsgJobService#handleMqMessage]
+2024-10-10 13:07:48.172 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleMenuCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@28d2afd8[class com.yang.finance.biz.job.SysJobService#setSysRoleMenuCacheJobHandler]
+2024-10-10 13:07:48.172 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleResourceCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@77a35b2f[class com.yang.finance.biz.job.SysJobService#setSysRoleResourceCacheJobHandler]
+2024-10-10 13:07:48.260 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2024-10-10 13:07:48.898 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 13:07:48.953 [main] INFO  com.yang.FinanceAdminApiApplication - Started FinanceAdminApiApplication in 6.293 seconds (JVM running for 6.753)
+2024-10-10 13:07:49.036 [redisson-netty-4-23] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-10-10 13:07:49.036 [redisson-netty-4-19] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-10-10 13:07:49.133 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-10-10 13:07:49.189 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:49.189 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-10-10 13:07:49.203 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:49.301 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-10-10 13:07:49.357 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init start ...
+2024-10-10 13:07:49.419 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init end
+2024-10-10 13:07:49.594 [main] INFO  c.yang.common.config.Swagger3Config - swaggerProperties: SwaggerProperties(enable=true, name=YANG-FINANCE-ADMIN-API, version=0.0.1, description=YANG-FINANCE-ADMIN-API 接口文档, pathMapping=null)
+2024-10-10 13:07:49.615 [main] INFO  com.yang.common.config.XxlJobConfig - >>>>>>>>>>> xxl-job config init.
+2024-10-10 13:07:49.851 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:handleMqMessage, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@1d642682[class com.yang.finance.biz.job.MqMsgJobService#handleMqMessage]
+2024-10-10 13:07:49.851 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleMenuCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@6afdb486[class com.yang.finance.biz.job.SysJobService#setSysRoleMenuCacheJobHandler]
+2024-10-10 13:07:49.851 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleResourceCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@321bf4b1[class com.yang.finance.biz.job.SysJobService#setSysRoleResourceCacheJobHandler]
+2024-10-10 13:07:49.897 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8091 is already in use
+2024-10-10 13:07:49.903 [main] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server destroy success.
+2024-10-10 13:07:49.903 [xxl-job, executor JobLogFileCleanThread] INFO  c.x.j.c.thread.JobLogFileCleanThread - >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destroy.
+2024-10-10 13:07:49.903 [xxl-job, executor TriggerCallbackThread] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor callback thread destroy.
+2024-10-10 13:07:49.904 [Thread-7] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor retry callback thread destroy.
+2024-10-10 13:07:49.921 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-10 13:07:49.942 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8091 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8091 or configure this application to listen on another port.
+
+2024-10-10 13:07:49.946 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server stop.
+2024-10-10 13:07:50.440 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:53.429 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:56.432 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:07:59.425 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:02.427 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:05.429 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:06.772 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server stop.
+2024-10-10 13:08:06.775 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2024-10-10 13:08:06.775 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job, executor registry thread destroy.
+2024-10-10 13:08:06.775 [SpringApplicationShutdownHook] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server destroy success.
+2024-10-10 13:08:06.775 [xxl-job, executor JobLogFileCleanThread] INFO  c.x.j.c.thread.JobLogFileCleanThread - >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destroy.
+2024-10-10 13:08:06.775 [xxl-job, executor TriggerCallbackThread] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor callback thread destroy.
+2024-10-10 13:08:06.775 [Thread-7] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor retry callback thread destroy.
+2024-10-10 13:08:13.232 [main] INFO  com.yang.FinanceAdminApiApplication - Starting FinanceAdminApiApplication using Java 21.0.4 on Gn84218 with PID 35460 (C:\Users\qq842\Desktop\MyProject\yang-finance-service\yang-finance-admin-api\target\classes started by qq842 in C:\Users\qq842\Desktop\MyProject\yang-finance-service)
+2024-10-10 13:08:13.234 [main] DEBUG com.yang.FinanceAdminApiApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2024-10-10 13:08:13.234 [main] INFO  com.yang.FinanceAdminApiApplication - The following 1 profile is active: "local"
+2024-10-10 13:08:14.683 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-10 13:08:14.683 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-10-10 13:08:14.753 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-10 13:08:14.935 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init start ...
+2024-10-10 13:08:14.978 [main] INFO  c.y.c.c.RedisTemplateDefaultConfig - RedisTemplateConfig init end
+2024-10-10 13:08:15.130 [main] DEBUG c.y.f.a.a.c.AuthFilterConfig$$EnhancerBySpringCGLIB$$5424349b - Filter 'authFilterConfig' configured for use
+2024-10-10 13:08:15.832 [main] INFO  org.redisson.Version - Redisson 3.13.6
+2024-10-10 13:08:15.961 [redisson-netty-4-14] INFO  o.r.c.pool.MasterConnectionPool - 10 connections initialized for /127.0.0.1:6379
+2024-10-10 13:08:15.961 [redisson-netty-4-16] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for /127.0.0.1:6379
+2024-10-10 13:08:16.059 [main] INFO  o.a.r.s.a.RocketMQAutoConfiguration - a producer (producer-group-1) init on namesrv 127.0.0.1:9876
+2024-10-10 13:08:16.114 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:16.114 [main] INFO  c.y.c.config.ElasticsearchConfig - >>>>>>>>>>> ElasticsearchClient config init.
+2024-10-10 13:08:16.131 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:16.234 [main] INFO  c.y.c.config.ElasticsearchConfig - ElasticsearchClient init end
+2024-10-10 13:08:16.289 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init start ...
+2024-10-10 13:08:16.344 [main] INFO  c.y.c.config.WebClientDefaultConfig - WebClientDefaultConfig init end
+2024-10-10 13:08:16.523 [main] INFO  c.yang.common.config.Swagger3Config - swaggerProperties: SwaggerProperties(enable=true, name=YANG-FINANCE-ADMIN-API, version=0.0.1, description=YANG-FINANCE-ADMIN-API 接口文档, pathMapping=null)
+2024-10-10 13:08:16.545 [main] INFO  com.yang.common.config.XxlJobConfig - >>>>>>>>>>> xxl-job config init.
+2024-10-10 13:08:16.741 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:handleMqMessage, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@755057c7[class com.yang.finance.biz.job.MqMsgJobService#handleMqMessage]
+2024-10-10 13:08:16.741 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleMenuCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@4d62bb8b[class com.yang.finance.biz.job.SysJobService#setSysRoleMenuCacheJobHandler]
+2024-10-10 13:08:16.741 [main] INFO  c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:setSysRoleResourceCacheJobHandler, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@70f37190[class com.yang.finance.biz.job.SysJobService#setSysRoleResourceCacheJobHandler]
+2024-10-10 13:08:16.814 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 9999
+2024-10-10 13:08:17.396 [main] INFO  com.yang.FinanceAdminApiApplication - Started FinanceAdminApiApplication in 4.544 seconds (JVM running for 4.994)
+2024-10-10 13:08:19.114 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:22.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:25.115 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:28.119 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:31.120 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:34.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:37.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:40.113 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:43.122 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:46.112 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:46.120 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:49.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:52.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:55.113 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:08:58.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:01.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:04.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:07.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:10.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:13.118 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:16.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:16.126 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:19.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:22.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:25.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:28.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:31.114 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:34.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:37.115 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:40.114 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:43.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:46.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:46.123 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:49.118 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:52.122 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:55.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:09:58.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:01.111 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:04.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:07.113 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:10.115 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:13.122 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:16.117 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:19.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:22.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:25.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:28.112 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:31.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:34.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:37.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:40.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:43.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:46.117 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:46.132 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:49.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:52.121 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:55.116 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:10:58.123 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:01.113 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:04.120 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:07.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:10.111 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:13.111 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:16.116 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:16.133 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:19.122 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:22.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:25.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:28.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:31.119 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:34.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:37.121 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:40.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:43.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:46.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:46.123 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:49.112 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:52.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:55.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:11:58.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:01.123 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:04.119 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:07.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:10.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:13.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:16.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:16.124 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:19.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:22.116 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:25.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:28.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:31.117 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:34.117 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:37.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:40.116 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:43.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:46.121 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:49.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:52.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:55.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:12:58.120 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:01.116 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:04.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:07.111 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:10.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:13.111 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:16.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:16.125 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:19.113 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:22.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:25.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:28.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:31.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:34.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:37.120 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:40.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:43.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:46.116 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:46.132 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:49.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:52.107 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:55.110 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:13:58.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:14:01.109 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:14:04.108 [NettyClientSelector_1] INFO  RocketmqRemoting - closeChannel: close the connection to remote address[127.0.0.1:9876] result: true
+2024-10-10 13:14:06.302 [Thread-8] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server stop.
+2024-10-10 13:14:06.306 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry-remove success, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='yang-finance-admin-api', registryValue='http://192.168.1.104:9999/'}, registryResult:ReturnT [code=200, msg=null, content=null]
+2024-10-10 13:14:06.306 [xxl-job, executor ExecutorRegistryThread] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job, executor registry thread destroy.
+2024-10-10 13:14:06.306 [SpringApplicationShutdownHook] INFO  com.xxl.job.core.server.EmbedServer - >>>>>>>>>>> xxl-job remoting server destroy success.
+2024-10-10 13:14:06.306 [xxl-job, executor JobLogFileCleanThread] INFO  c.x.j.c.thread.JobLogFileCleanThread - >>>>>>>>>>> xxl-job, executor JobLogFileCleanThread thread destroy.
+2024-10-10 13:14:06.306 [xxl-job, executor TriggerCallbackThread] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor callback thread destroy.
+2024-10-10 13:14:06.306 [Thread-7] INFO  c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job, executor retry callback thread destroy.
