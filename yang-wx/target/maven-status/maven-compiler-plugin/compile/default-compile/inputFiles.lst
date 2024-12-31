@@ -1,0 +1,15 @@
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\MpCommonRequest.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\MpBaseEventRequest.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\MpQrCodeCreateResult.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\MpQrCodeCreateRequest.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\service\WXService.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\AccessTokenResult.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\service\WxMpEventService.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\config\WxDetailConfig.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\MpSubscribeEventRequest.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\dto\MpTextEventRequest.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\service\impl\WXServiceImpl.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\constant\WXApiConstant.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\config\WxConfig.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\aes\AesException.java
+D:\MyProject\yang-finance-service\yang-wx\src\main\java\com\yang\wx\service\impl\WxMpEventServiceImpl.java

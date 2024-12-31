@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for yang-wx" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="D:/develop/apache-maven-3.8.1/mvn-rep/org/projectlombok/lombok/1.18.16/lombok-1.18.16.jar" />
+          <entry name="D:/develop/apache-maven-3.8.1/mvn-rep/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
+          <entry name="D:/develop/apache-maven-3.8.1/mvn-rep/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
+        </processorPath>
+        <module name="yang-wx" />
+        <module name="yang-mybatis" />
+        <module name="yang-finance-biz" />
+        <module name="yang-common" />
+        <module name="yang-finance-admin-api" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
